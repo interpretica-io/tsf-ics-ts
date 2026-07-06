@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>tsf-ics demonstration suite</description>
+
+    <!-- @page ics-ts ICS (Modbus) Suite
+          @objective Exercise tsf-ics against a Modbus TCP endpoint the
+                     agent can reach.
+
+          @par Test Groups:
+          - @ref ics-read - Read registers and coils from an endpoint
+          - @ref ics-audit - Read the Modbus security posture and gate on it
+
+          @par Notes:
+          - Modbus access runs on the agent, in its RPC server, over
+            libmodbus. Modbus has no authentication, so a reachable
+            endpoint answers anyone - the point the audit makes.
+          - There is no Modbus device on a stock host, so both tests
+            SKIP cleanly unless an endpoint is configured through the
+            TSF_ICS_HOST / TSF_ICS_PORT / TSF_ICS_UNIT environment
+            variables. The write probe stays off unless TSF_ICS_WRITE=1.
+          - The agent host must carry libmodbus with its headers.
+    -->
+
+    <author mailto="maxim.menshikov@interpretica.io" />
+
+    <session track_conf="silent">
+        <!-- @page ics-ts-prologue Test Suite Prologue
+              @objective Prepare the test environment.
+        -->
+        <prologue>
+            <script name="prologue">
+                <objective>
+                    Prepare the test environment.
+                    @md
+                </objective>
+            </script>
+        </prologue>
+
+        <!-- @page ics-ts-epilogue Test Suite Epilogue
+              @objective Finalize the test environment.
+        -->
+        <epilogue>
+            <script name="epilogue">
+                <objective>
+                    Finalize the test environment.
+                    @md
+                </objective>
+            </script>
+        </epilogue>
+
+        <run>
+            <package name="ics" />
+        </run>
+    </session>
+</package>

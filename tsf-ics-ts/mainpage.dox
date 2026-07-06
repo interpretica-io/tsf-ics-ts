@@ -1,0 +1,21 @@
+/** @mainpage
+
+This suite exercises tsf-ics - talking to an industrial control device
+(Modbus TCP) from the Test Agent it runs on, over libmodbus:
+
+- @ref ics-read - read holding and input registers and coils/discrete
+  inputs from an endpoint, and a device identification;
+- @ref ics-audit - read the endpoint as a security posture through
+  tsf-cybersec: Modbus has no authentication, so a reachable endpoint
+  answers anyone - a readable area, a device-id fingerprint, and (only
+  when explicitly enabled and done reversibly) a writable register.
+
+There is no Modbus device on a stock host, so both tests SKIP cleanly
+unless an endpoint is configured through the TSF_ICS_HOST / TSF_ICS_PORT
+/ TSF_ICS_UNIT environment variables; the write probe stays off unless
+TSF_ICS_WRITE=1. The point is that tsf-ics drives Modbus over the
+library (not by scraping a tool) and turns an unauthenticated control
+surface into findings. Authorized use only - a configured endpoint must
+be a device you own or are engaged to test.
+
+*/

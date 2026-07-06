@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>ICS (Modbus)</description>
+    <author mailto="maxim.menshikov@interpretica.io" />
+    <session track_conf="silent">
+        <prologue><script name="prologue"><objective>Prepare the ICS group.</objective></script></prologue>
+        <epilogue><script name="epilogue"><objective>Finalize the ICS group.</objective></script></epilogue>
+        <run><script name="read"><objective>Read registers and coils from a Modbus endpoint.</objective></script></run>
+        <run><script name="audit"><objective>Read the Modbus security posture and gate on it.</objective></script></run>
+    </session>
+</package>

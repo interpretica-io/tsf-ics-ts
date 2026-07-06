@@ -1,0 +1,7 @@
+# External repositories pinned by the Test Environment Builder.
+# Commit this file: it makes the build reproducible.
+# Run dispatcher.sh --update-external to move the records on.
+#
+# Empty of records on purpose for a fresh suite: the first build
+# resolves the repositories from the refs in conf/external.yml and
+# writes their pinned lines here.

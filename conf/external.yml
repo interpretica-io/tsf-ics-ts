@@ -1,0 +1,23 @@
+repositories:
+  - name: tsf_devtool
+    url: https://github.com/interpretica-io/tsf-devtool.git
+    ref: main
+    libs:
+      - tapi_devtool
+  - name: tsf_kernel
+    url: https://github.com/interpretica-io/tsf-kernel.git
+    ref: main
+    libs:
+      - tapi_kernel
+  - name: tsf_cybersec
+    url: https://github.com/interpretica-io/tsf-cybersec.git
+    ref: main
+    libs:
+      - tapi_cybersec
+  - name: tsf_ics
+    url: https://github.com/interpretica-io/tsf-ics.git
+    ref: main
+    libs:
+      - ta_ics
+      - rpcs_ics
+      - tapi_ics
